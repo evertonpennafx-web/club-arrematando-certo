@@ -1,249 +1,158 @@
-<!doctype html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Club Oportunidades • Arrematando Certo</title>
-    <meta name="description" content="Club Oportunidades: ouro, veículos e itens. Curadoria + educação prática + alertas. Entrada por R$29,90/mês." />
-    <style>
-      :root{
-        --bg:#0b0b0c; --card:#151517; --text:#f1f1f1; --muted:#b8b8b8;
-        --gold:#d4af37; --gold2:#b8921f; --border:rgba(255,255,255,.08);
-        --shadow: 0 18px 50px rgba(0,0,0,.55);
-      }
-      *{box-sizing:border-box}
-      body{
-        margin:0;
-        font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Arial;
-        background: radial-gradient(1100px 750px at 50% -10%, rgba(212,175,55,.18), transparent 60%),
-                    var(--bg);
-        color:var(--text);
-      }
-      a{color:inherit; text-decoration:none}
-      .container{max-width:1100px; margin:0 auto; padding:26px 18px 70px}
-      .top{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:18px}
-      .back{color:var(--gold); font-weight:800}
-      .badge{
-        border:1px solid var(--border);
-        background: rgba(255,255,255,.03);
-        padding:10px 12px; border-radius:999px;
-        font-size:13px; color:var(--muted);
-      }
-      .hero{
-        display:grid; grid-template-columns: 1.1fr .9fr; gap:18px; align-items:stretch;
-      }
-      .panel{
-        border:1px solid var(--border);
-        background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-        border-radius:18px; box-shadow:var(--shadow);
-        padding:22px;
-      }
-      h1{margin:0; font-size: clamp(26px, 3.7vw, 42px); line-height:1.1}
-      .sub{margin:12px 0 0; color:var(--muted); line-height:1.6}
-      .points{margin:16px 0 0; padding-left:18px; color:var(--muted); line-height:1.75}
-      .ctaBox{display:flex; flex-direction:column; gap:10px}
-      .price{font-size:28px; font-weight:900}
-      .mini{color:rgba(255,255,255,.55); font-size:12.5px; line-height:1.5}
-      .btn{
-        display:flex; align-items:center; justify-content:center; gap:10px;
-        border:0; cursor:pointer;
-        background: linear-gradient(180deg, var(--gold), var(--gold2));
-        color:#121212;
-        font-weight:900;
-        padding:14px 16px;
-        border-radius:14px;
-        box-shadow: 0 12px 30px rgba(212,175,55,.18);
-      }
-      .btnGhost{
-        display:flex; align-items:center; justify-content:center; gap:10px;
-        border:1px solid var(--border);
-        background: rgba(255,255,255,.03);
-        color:var(--text);
-        font-weight:800;
-        padding:14px 16px;
-        border-radius:14px;
-      }
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oportunidades | Club Arrematando Certo</title>
 
-      .section{margin-top:18px; border:1px solid var(--border); background: rgba(255,255,255,.02); border-radius:18px; padding:22px}
-      .section h2{margin:0 0 10px; font-size:18px}
-      .how{display:grid; grid-template-columns: repeat(4, 1fr); gap:12px; margin-top:12px}
-      .step{background: rgba(0,0,0,.25); border:1px solid var(--border); border-radius:14px; padding:14px}
-      .step b{display:block; margin-bottom:6px}
-      .step p{margin:0; color:var(--muted); line-height:1.5; font-size:14px}
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: white;
+  line-height: 1.6;
+}
 
-      .proofGrid{display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; margin-top:12px}
-      .proof{
-        border:1px solid var(--border);
-        background: rgba(0,0,0,.22);
-        border-radius:14px;
-        overflow:hidden;
-      }
-      .proof img{width:100%; height:220px; object-fit:cover; display:block}
-      .cap{padding:10px 12px; color:var(--muted); font-size:13px; line-height:1.45}
+.container {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
 
-      .faq{display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-top:12px}
-      details{
-        border:1px solid var(--border);
-        border-radius:14px;
-        background: rgba(0,0,0,.22);
-        padding:12px 12px;
-      }
-      summary{cursor:pointer; font-weight:800}
-      details p{margin:10px 0 0; color:var(--muted); line-height:1.55; font-size:14px}
+h1 {
+  font-size: 28px;
+  text-align: center;
+}
 
-      .sticky{
-        position:fixed; left:0; right:0; bottom:0;
-        background: rgba(10,10,10,.78);
-        backdrop-filter: blur(10px);
-        border-top:1px solid var(--border);
-      }
-      .stickyInner{
-        max-width:1100px; margin:0 auto; padding:12px 18px;
-        display:flex; gap:10px; align-items:center; justify-content:space-between;
-      }
-      .stickyInner .left{display:flex; flex-direction:column}
-      .stickyInner .left b{font-size:14px}
-      .stickyInner .left span{font-size:12px; color:rgba(255,255,255,.6)}
-      .stickyInner .right{display:flex; gap:10px; align-items:center}
-      .stickyInner a{white-space:nowrap}
+h2 {
+  margin-top: 40px;
+  font-size: 22px;
+}
 
-      @media (max-width: 980px){
-        .hero{grid-template-columns: 1fr}
-        .how{grid-template-columns: 1fr 1fr}
-        .proofGrid{grid-template-columns: 1fr 1fr}
-        .faq{grid-template-columns: 1fr}
-      }
-      @media (max-width: 560px){
-        .how{grid-template-columns: 1fr}
-        .proofGrid{grid-template-columns: 1fr}
-        .proof img{height:200px}
-        .stickyInner{flex-direction:column; align-items:stretch}
-        .stickyInner .right{flex-direction:column}
-        .stickyInner a{width:100%; text-align:center}
-      }
-    </style>
-  </head>
+.button {
+  display: block;
+  width: 100%;
+  background: #22c55e;
+  color: black;
+  text-align: center;
+  padding: 15px;
+  margin: 20px 0;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+}
 
-  <body>
-    <div class="container">
-      <div class="top">
-        <a class="back" href="/index.html">← Voltar</a>
-        <div class="badge">💰 Club Oportunidades • R$29,90/mês</div>
-      </div>
+.highlight {
+  color: #22c55e;
+  font-weight: bold;
+}
 
-      <div class="hero">
-        <div class="panel">
-          <h1>Oportunidades de leilão para <span style="color:var(--gold)">lucro e renda extra</span> (sem perder tempo)</h1>
-          <p class="sub">
-            Você recebe oportunidades filtradas de <b>ouro, veículos e itens</b>, com visão prática do que vale a pena.
-            Ideal pra quem quer começar ou operar “no volume” com mais segurança.
-          </p>
-          <ul class="points">
-            <li><b>Curadoria</b> (o que é oportunidade de verdade)</li>
-            <li><b>Alertas</b> e contexto rápido do lote</li>
-            <li><b>Educação prática</b> (o que checar antes de dar lance)</li>
-            <li><b>Tira-dúvidas no WhatsApp</b> (com mensagem automática)</li>
-          </ul>
-        </div>
+.section {
+  margin-top: 40px;
+}
 
-        <div class="panel ctaBox">
-          <div>
-            <div style="color:var(--muted); font-weight:700">Acesso mensal</div>
-            <div class="price">R$ 29,90</div>
-            <div class="mini">Pagamento via Kiwify. Cancelamento e regras conforme a plataforma.</div>
-          </div>
+.floating-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #22c55e;
+  color: black;
+  text-align: center;
+  padding: 15px;
+  font-weight: bold;
+  text-decoration: none;
+}
 
-          <a class="btn" href="https://pay.kiwify.com.br/BDczlbr" target="_blank" rel="noreferrer">
-            Entrar agora (Kiwify) →
-          </a>
+.whatsapp {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 14px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 20px;
+}
+</style>
+</head>
 
-          <a class="btnGhost" id="btnWhatsapp" href="#" target="_blank" rel="noreferrer">
-            Tirar dúvidas no WhatsApp
-          </a>
+<body>
 
-          <div class="mini">
-            *Conteúdo educativo. Resultados variam por capital, execução e risco do lote.
-          </div>
-        </div>
-      </div>
+<div class="container">
 
-      <div class="section">
-        <h2>Como funciona (em 60 segundos)</h2>
-        <div class="how">
-          <div class="step"><b>1) Você entra</b><p>Assina na Kiwify e recebe acesso.</p></div>
-          <div class="step"><b>2) Recebe oportunidades</b><p>Curadoria + alertas do que faz sentido.</p></div>
-          <div class="step"><b>3) Valida com checklist</b><p>O que olhar antes do lance (pra evitar cilada).</p></div>
-          <div class="step"><b>4) Se quiser, tira dúvida</b><p>WhatsApp com mensagem já identificando a origem.</p></div>
-        </div>
-      </div>
+<h1>
+Receba <span class="highlight">oportunidades reais de leilão</span> com potencial de lucro antes da maioria do mercado
+</h1>
 
-      <div class="section">
-        <h2>Provas sociais e exemplos</h2>
-        <p class="mini" style="margin:0">Dica: suba as imagens no repo na pasta <b>/assets</b> e troque os nomes abaixo.</p>
+<p style="text-align:center;">
+Sem perder horas analisando edital.  
+Sem correr risco oculto.  
+Sem cair em imóvel problemático.
+</p>
 
-        <div class="proofGrid">
-          <div class="proof">
-            <img src="/assets/prova-ouro-1.png" alt="Prova social 1" loading="lazy" />
-            <div class="cap">Exemplo de resultado/ROI (print real).</div>
-          </div>
-          <div class="proof">
-            <img src="/assets/prova-ouro-2.png" alt="Prova social 2" loading="lazy" />
-            <div class="cap">Oportunidade “de volume” com contexto.</div>
-          </div>
-          <div class="proof">
-            <img src="/assets/prova-ouro-3.png" alt="Prova social 3" loading="lazy" />
-            <div class="cap">Comparativo / avaliação / margem (quando houver).</div>
-          </div>
-        </div>
-      </div>
+<a class="button" href="https://pay.kiwify.com.br/BDczlbr">
+QUERO ENTRAR NO CLUB AGORA
+</a>
 
-      <div class="section">
-        <h2>Dúvidas frequentes</h2>
-        <div class="faq">
-          <details>
-            <summary>Isso é curso?</summary>
-            <p>Não. É <b>curadoria + educação prática</b> pra você tomar decisão melhor e mais rápido. O objetivo é te poupar tempo e reduzir erros comuns.</p>
-          </details>
-          <details>
-            <summary>Serve pra iniciante?</summary>
-            <p>Sim. Você entra com o <b>checklist</b> e aprende na prática. Sem “teoria infinita”.</p>
-          </details>
-          <details>
-            <summary>Quantas oportunidades eu recebo?</summary>
-            <p>Depende do mercado e do filtro. O foco é <b>qualidade e clareza</b>, não “spam” de lote ruim.</p>
-          </details>
-          <details>
-            <summary>Posso cancelar quando quiser?</summary>
-            <p>Sim, diretamente pela Kiwify (regras e prazos conforme a plataforma).</p>
-          </details>
-        </div>
-      </div>
-    </div>
+<div class="section">
+<h2>O problema que ninguém fala</h2>
+<p>
+A maioria das pessoas perde dinheiro em leilão porque:
+</p>
+<ul>
+<li>Não entende edital</li>
+<li>Não sabe calcular risco</li>
+<li>Compra imóvel com problema jurídico</li>
+<li>Entra tarde demais na oportunidade</li>
+</ul>
+</div>
 
-    <div class="sticky">
-      <div class="stickyInner">
-        <div class="left">
-          <b>Club Oportunidades • R$29,90/mês</b>
-          <span>Entre agora ou tire dúvidas no WhatsApp</span>
-        </div>
-        <div class="right">
-          <a class="btn" href="https://pay.kiwify.com.br/BDczlbr" target="_blank" rel="noreferrer">Entrar (Kiwify) →</a>
-          <a class="btnGhost" id="btnWhatsapp2" href="#" target="_blank" rel="noreferrer">WhatsApp</a>
-        </div>
-      </div>
-    </div>
+<div class="section">
+<h2>A solução: Club Oportunidades</h2>
+<p>
+Você recebe oportunidades já filtradas com:
+</p>
+<ul>
+<li>Potencial de lucro estimado</li>
+<li>Análise de risco</li>
+<li>Resumo claro do edital</li>
+<li>Direto ao ponto</li>
+</ul>
+</div>
 
-    <script>
-      (function(){
-        const phone = "5511983411251";
-        const pageName = "Club Oportunidades (R$29,90)";
-        const msg = `Olá! Vim da página: ${pageName}. Quero tirar uma dúvida antes de entrar.`;
-        const link = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
-        const b1 = document.getElementById("btnWhatsapp");
-        const b2 = document.getElementById("btnWhatsapp2");
-        if(b1) b1.href = link;
-        if(b2) b2.href = link;
-      })();
-    </script>
-  </body>
+<div class="section">
+<h2>Por apenas R$29,90/mês</h2>
+<p>
+Menos que um almoço.
+Uma única oportunidade certa pode pagar anos de assinatura.
+</p>
+
+<a class="button" href="https://pay.kiwify.com.br/BDczlbr">
+ENTRAR NO CLUB POR R$29,90
+</a>
+</div>
+
+<div class="section">
+<h2>Garantia</h2>
+<p>
+Se não fizer sentido para você, basta cancelar.
+Sem burocracia.
+Sem risco.
+</p>
+</div>
+
+</div>
+
+<a class="floating-cta" href="https://pay.kiwify.com.br/BDczlbr">
+ENTRAR AGORA
+</a>
+
+<a class="whatsapp" href="https://wa.me/5511983411251?text=Vim%20da%20pagina%20de%20Oportunidades%20do%20Club">
+💬
+</a>
+
+</body>
 </html>
