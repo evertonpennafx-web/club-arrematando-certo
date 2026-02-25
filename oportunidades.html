@@ -1,65 +1,172 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Club Oportunidades | Arrematando Certo</title>
-
 <style>
-body{font-family:Arial;background:#0b0b0b;color:#fff;margin:0}
-.wrap{max-width:900px;margin:auto;padding:50px 20px}
-h1{font-size:40px;margin-bottom:10px}
-p{opacity:.9;line-height:1.6}
-.box{background:#171717;border-radius:16px;padding:22px;margin-top:25px}
-.cta{
-display:inline-block;
-margin-top:20px;
-padding:16px 22px;
-background:#d4af37;
-color:#111;
-font-weight:800;
-border-radius:12px;
-text-decoration:none;
-font-size:18px;
-}
-.back{color:#d4af37;text-decoration:none}
+  :root{
+    --bg:#0b0b0b; --card:#151515; --text:#ffffff; --muted:rgba(255,255,255,.78);
+    --gold:#d4af37; --line:rgba(255,255,255,.10); --shadow:0 20px 60px rgba(0,0,0,.55);
+    --radius:18px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:radial-gradient(1200px 700px at 50% -10%, rgba(212,175,55,.12), transparent 60%), var(--bg); color:var(--text)}
+  .wrap{max-width:980px;margin:0 auto;padding:44px 18px 80px}
+  .top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800}
+  .badge{font-size:12px;padding:6px 10px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.04);color:var(--muted)}
+  .back{color:var(--gold);text-decoration:none;font-weight:700}
+  .hero{display:grid;grid-template-columns:1.25fr .75fr;gap:18px;margin-top:18px}
+  .panel{background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px}
+  h1{font-size:44px;line-height:1.05;margin:0 0 12px}
+  .sub{color:var(--muted);font-size:16px;line-height:1.6;margin:0 0 18px}
+  .hl{color:var(--gold);font-weight:900}
+  .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+  .cta{display:inline-flex;align-items:center;justify-content:center;padding:14px 18px;border-radius:14px;text-decoration:none;font-weight:900;background:var(--gold);color:#111}
+  .ghost{display:inline-flex;align-items:center;justify-content:center;padding:14px 18px;border-radius:14px;text-decoration:none;font-weight:800;background:transparent;border:1px solid var(--line);color:var(--text)}
+  .fine{margin-top:10px;color:rgba(255,255,255,.65);font-size:13px;line-height:1.5}
+  .side{display:flex;flex-direction:column;gap:12px}
+  .stat{background:rgba(0,0,0,.25);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+  .stat b{display:block;font-size:16px}
+  .stat span{color:var(--muted);font-size:13px;line-height:1.45}
+  .divider{height:1px;background:var(--line);margin:22px 0}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .card{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+  .card h3{margin:0 0 10px}
+  ul{margin:10px 0 0 18px;padding:0}
+  li{margin:10px 0;color:var(--muted);line-height:1.5}
+  .pricing{background:linear-gradient(180deg, rgba(212,175,55,.12), rgba(255,255,255,.03));border:1px solid rgba(212,175,55,.25)}
+  .priceLine{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .price{font-size:40px;font-weight:950;color:var(--gold);letter-spacing:-.5px}
+  .pill{font-size:12px;padding:7px 10px;border-radius:999px;background:rgba(212,175,55,.16);border:1px solid rgba(212,175,55,.28);color:rgba(255,255,255,.9);font-weight:800}
+  .faq details{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:14px;padding:14px;margin-top:10px}
+  .faq summary{cursor:pointer;font-weight:900}
+  .faq p{color:var(--muted);margin:10px 0 0;line-height:1.6}
+  @media (max-width:920px){
+    .hero{grid-template-columns:1fr}
+    h1{font-size:36px}
+    .grid{grid-template-columns:1fr}
+  }
 </style>
 </head>
-
 <body>
-
 <div class="wrap">
+  <div class="top">
+    <div class="brand">⚡ Arrematando Certo <span class="badge">Club Oportunidades</span></div>
+    <a class="back" href="/">← Voltar</a>
+  </div>
 
-<a class="back" href="/">← Voltar</a>
+  <div class="hero">
+    <div class="panel">
+      <h1>Achados abaixo do mercado para <span class="hl">giro e renda extra</span> (sem perder horas garimpando).</h1>
+      <p class="sub">
+        O <b>Club Oportunidades</b> é pra quem quer começar mais leve:
+        oportunidades de <b>ouro, veículos e itens</b> com potencial de margem, com orientação prática do que checar antes de comprar.
+      </p>
 
-<h1>💰 Club Oportunidades</h1>
+      <div class="ctaRow">
+        <a class="cta" href="https://pay.kiwify.com.br/BDczlbr" target="_blank" rel="noopener">Entrar no Club por R$29,90</a>
+        <a class="ghost" href="#conteudo">Ver o que você recebe</a>
+      </div>
 
-<p>
-Grupo focado em oportunidades de compra abaixo do mercado
-como ouro, veículos, itens e outros achados.
-</p>
+      <div class="fine">
+        ✅ Acesso imediato após o pagamento • Entrega automática do link do grupo • Sem promessa de lucro — aqui é filtro e prática.
+      </div>
+    </div>
 
-<div class="box">
+    <div class="side">
+      <div class="stat">
+        <b>Pra “volume e giro”</b>
+        <span>Mais simples de começar e aprender fazendo.</span>
+      </div>
+      <div class="stat">
+        <b>Curadoria pronta</b>
+        <span>Você para de perder tempo no caos e recebe oportunidades filtradas.</span>
+      </div>
+      <div class="stat">
+        <b>Checklist anti-cilada</b>
+        <span>O básico bem feito evita prejuízo bobo.</span>
+      </div>
+    </div>
+  </div>
 
-<h3>Você recebe:</h3>
+  <div id="conteudo">
+    <div class="divider"></div>
 
-<ul>
-<li>Alertas de oportunidades filtradas</li>
-<li>Resumo rápido do potencial</li>
-<li>Dicas práticas antes da compra</li>
-<li>Aprendizado real no dia a dia</li>
-</ul>
+    <div class="grid">
+      <div class="card">
+        <h3>✅ O que você recebe</h3>
+        <ul>
+          <li><b>Oportunidades filtradas</b> (ouro, veículos, itens)</li>
+          <li><b>Resumo do potencial</b> + pontos de atenção</li>
+          <li><b>Checklist prático</b> antes de comprar</li>
+          <li><b>Educação prática</b> no dia a dia (pra evoluir rápido)</li>
+        </ul>
+      </div>
 
-<a class="cta" href="https://pay.kiwify.com.br/BDczlbr" target="_blank">
-Entrar no Club por R$29,90
-</a>
+      <div class="card">
+        <h3>🧠 O que isso evita</h3>
+        <ul>
+          <li>Comprar no impulso e “descobrir depois”</li>
+          <li>Entrar sem checar custos, taxas e condição do item</li>
+          <li>Perder horas em oportunidades ruins</li>
+          <li>Repetir erros básicos de iniciantes</li>
+        </ul>
+      </div>
+    </div>
 
-<p style="margin-top:10px;font-size:14px;opacity:.7">
-Após o pagamento o acesso ao grupo é enviado automaticamente.
-</p>
+    <div class="divider"></div>
 
-</div>
+    <div class="card pricing">
+      <div class="priceLine">
+        <div>
+          <h3 style="margin:0 0 6px">Entre agora no Club Oportunidades</h3>
+          <div class="pill">Acesso imediato + entrega automática</div>
+        </div>
+        <div class="price">R$29,90</div>
+      </div>
 
+      <div class="ctaRow" style="margin-top:14px">
+        <a class="cta" href="https://pay.kiwify.com.br/BDczlbr" target="_blank" rel="noopener">Quero entrar agora</a>
+        <a class="ghost" href="#faq">Tirar dúvidas</a>
+      </div>
+
+      <div class="fine">
+        Você recebe o link do grupo automaticamente após o pagamento pela Kiwify.
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="card faq" id="faq">
+      <h3 style="margin:0 0 8px">❓ Dúvidas comuns</h3>
+
+      <details>
+        <summary>Como recebo o acesso ao grupo?</summary>
+        <p>Após o pagamento, a Kiwify entrega automaticamente o link de acesso (página de obrigado e/ou e-mail).</p>
+      </details>
+
+      <details>
+        <summary>É pra iniciante?</summary>
+        <p>Sim. A ideia é começar mais simples e evoluir com checklist e prática.</p>
+      </details>
+
+      <details>
+        <summary>Vocês garantem lucro?</summary>
+        <p>Não. O objetivo é filtro e método. Resultado depende da sua execução.</p>
+      </details>
+
+      <details>
+        <summary>Posso cancelar?</summary>
+        <p>As regras de cancelamento seguem o checkout da Kiwify, exibidas no momento do pagamento.</p>
+      </details>
+
+      <div class="ctaRow" style="margin-top:16px">
+        <a class="cta" href="https://pay.kiwify.com.br/BDczlbr" target="_blank" rel="noopener">Entrar no Club por R$29,90</a>
+      </div>
+    </div>
+  </div>
 </div>
 </body>
 </html>
