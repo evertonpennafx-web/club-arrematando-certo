@@ -1,219 +1,248 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Club Imobiliário | Arrematando Certo</title>
-<style>
-  :root{
-    --bg:#0b0b0b; --card:#151515; --card2:#101010; --text:#ffffff; --muted:rgba(255,255,255,.78);
-    --gold:#d4af37; --line:rgba(255,255,255,.10); --shadow:0 20px 60px rgba(0,0,0,.55);
-    --radius:18px;
-  }
-  *{box-sizing:border-box}
-  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:radial-gradient(1200px 700px at 50% -10%, rgba(212,175,55,.12), transparent 60%), var(--bg); color:var(--text)}
-  a{color:inherit}
-  .wrap{max-width:980px;margin:0 auto;padding:44px 18px 80px}
-  .top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}
-  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
-  .badge{font-size:12px;padding:6px 10px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.04);color:var(--muted)}
-  .back{color:var(--gold);text-decoration:none;font-weight:700}
-  .hero{display:grid;grid-template-columns:1.25fr .75fr;gap:18px;align-items:stretch;margin-top:18px}
-  .panel{background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px}
-  h1{font-size:44px;line-height:1.05;margin:0 0 12px}
-  .sub{color:var(--muted);font-size:16px;line-height:1.6;margin:0 0 18px}
-  .hl{color:var(--gold);font-weight:900}
-  .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
-  .cta{
-    display:inline-flex;align-items:center;justify-content:center;gap:10px;
-    padding:14px 18px;border-radius:14px;text-decoration:none;font-weight:900;
-    background:var(--gold);color:#111; border:0;
-  }
-  .ghost{
-    display:inline-flex;align-items:center;justify-content:center;
-    padding:14px 18px;border-radius:14px;text-decoration:none;font-weight:800;
-    background:transparent;border:1px solid var(--line);color:var(--text);
-  }
-  .fine{margin-top:10px;color:rgba(255,255,255,.65);font-size:13px;line-height:1.5}
-  .side{display:flex;flex-direction:column;gap:12px}
-  .stat{background:rgba(0,0,0,.25);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
-  .stat b{display:block;font-size:16px}
-  .stat span{color:var(--muted);font-size:13px;line-height:1.45}
-  .section{margin-top:22px}
-  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  .card{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
-  .card h3{margin:0 0 10px}
-  ul{margin:10px 0 0 18px;padding:0}
-  li{margin:10px 0;color:var(--muted);line-height:1.5}
-  .divider{height:1px;background:var(--line);margin:22px 0}
-  .pricing{background:linear-gradient(180deg, rgba(212,175,55,.12), rgba(255,255,255,.03));border:1px solid rgba(212,175,55,.25)}
-  .priceLine{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
-  .price{font-size:40px;font-weight:950;color:var(--gold);letter-spacing:-.5px}
-  .pill{font-size:12px;padding:7px 10px;border-radius:999px;background:rgba(212,175,55,.16);border:1px solid rgba(212,175,55,.28);color:rgba(255,255,255,.9);font-weight:800}
-  .faq details{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:14px;padding:14px 14px;margin-top:10px}
-  .faq summary{cursor:pointer;font-weight:900}
-  .faq p{color:var(--muted);margin:10px 0 0;line-height:1.6}
-  .proof{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
-  .shot{border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.02);padding:12px;color:rgba(255,255,255,.7);font-size:13px;min-height:110px;display:flex;align-items:center;justify-content:center;text-align:center}
-  @media (max-width:920px){
-    .hero{grid-template-columns:1fr}
-    h1{font-size:36px}
-    .proof{grid-template-columns:1fr}
-    .grid{grid-template-columns:1fr}
-  }
-</style>
-</head>
-<body>
-<div class="wrap">
-  <div class="top">
-    <div class="brand">🏛️ Arrematando Certo <span class="badge">Club Imobiliário</span></div>
-    <a class="back" href="/">← Voltar</a>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Club Imobiliário • Arrematando Certo</title>
+    <meta name="description" content="Club Imobiliário: curadoria de imóveis abaixo do mercado, resumo de riscos e checklist do edital. Entrada por R$97/mês." />
+    <style>
+      :root{
+        --bg:#0b0b0c; --text:#f1f1f1; --muted:#b8b8b8;
+        --gold:#d4af37; --gold2:#b8921f; --border:rgba(255,255,255,.08);
+        --shadow: 0 18px 50px rgba(0,0,0,.55);
+      }
+      *{box-sizing:border-box}
+      body{
+        margin:0;
+        font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Arial;
+        background: radial-gradient(1100px 750px at 50% -10%, rgba(212,175,55,.18), transparent 60%),
+                    var(--bg);
+        color:var(--text);
+      }
+      a{color:inherit; text-decoration:none}
+      .container{max-width:1100px; margin:0 auto; padding:26px 18px 70px}
+      .top{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:18px}
+      .back{color:var(--gold); font-weight:800}
+      .badge{
+        border:1px solid var(--border);
+        background: rgba(255,255,255,.03);
+        padding:10px 12px; border-radius:999px;
+        font-size:13px; color:var(--muted);
+      }
+      .hero{display:grid; grid-template-columns: 1.15fr .85fr; gap:18px; align-items:stretch}
+      .panel{
+        border:1px solid var(--border);
+        background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+        border-radius:18px; box-shadow:var(--shadow);
+        padding:22px;
+      }
+      h1{margin:0; font-size: clamp(26px, 3.7vw, 42px); line-height:1.1}
+      .sub{margin:12px 0 0; color:var(--muted); line-height:1.6}
+      .points{margin:16px 0 0; padding-left:18px; color:var(--muted); line-height:1.75}
+      .ctaBox{display:flex; flex-direction:column; gap:10px}
+      .price{font-size:28px; font-weight:900}
+      .mini{color:rgba(255,255,255,.55); font-size:12.5px; line-height:1.5}
+      .btn{
+        display:flex; align-items:center; justify-content:center; gap:10px;
+        border:0; cursor:pointer;
+        background: linear-gradient(180deg, var(--gold), var(--gold2));
+        color:#121212;
+        font-weight:900;
+        padding:14px 16px;
+        border-radius:14px;
+        box-shadow: 0 12px 30px rgba(212,175,55,.18);
+      }
+      .btnGhost{
+        display:flex; align-items:center; justify-content:center; gap:10px;
+        border:1px solid var(--border);
+        background: rgba(255,255,255,.03);
+        color:var(--text);
+        font-weight:800;
+        padding:14px 16px;
+        border-radius:14px;
+      }
 
-  <div class="hero">
-    <div class="panel">
-      <h1>Compre imóvel de leilão com <span class="hl">critério</span> — e evite ciladas caras.</h1>
-      <p class="sub">
-        O <b>Club Imobiliário</b> é uma curadoria prática: você recebe oportunidades filtradas e um direcionamento
-        objetivo do que olhar (edital, riscos, ocupação, dívidas e “pegadinhas”), pra tomar decisão com mais segurança.
-      </p>
+      .section{margin-top:18px; border:1px solid var(--border); background: rgba(255,255,255,.02); border-radius:18px; padding:22px}
+      .section h2{margin:0 0 10px; font-size:18px}
 
-      <div class="ctaRow">
-        <a class="cta" href="https://pay.kiwify.com.br/p4L7JdR" target="_blank" rel="noopener">Entrar no Club por R$97</a>
-        <a class="ghost" href="#conteudo">Ver o que você recebe</a>
+      .how{display:grid; grid-template-columns: repeat(4, 1fr); gap:12px; margin-top:12px}
+      .step{background: rgba(0,0,0,.25); border:1px solid var(--border); border-radius:14px; padding:14px}
+      .step b{display:block; margin-bottom:6px}
+      .step p{margin:0; color:var(--muted); line-height:1.5; font-size:14px}
+
+      .proofGrid{display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; margin-top:12px}
+      .proof{
+        border:1px solid var(--border);
+        background: rgba(0,0,0,.22);
+        border-radius:14px;
+        overflow:hidden;
+      }
+      .proof img{width:100%; height:220px; object-fit:cover; display:block}
+      .cap{padding:10px 12px; color:var(--muted); font-size:13px; line-height:1.45}
+
+      .faq{display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-top:12px}
+      details{
+        border:1px solid var(--border);
+        border-radius:14px;
+        background: rgba(0,0,0,.22);
+        padding:12px 12px;
+      }
+      summary{cursor:pointer; font-weight:800}
+      details p{margin:10px 0 0; color:var(--muted); line-height:1.55; font-size:14px}
+
+      .sticky{
+        position:fixed; left:0; right:0; bottom:0;
+        background: rgba(10,10,10,.78);
+        backdrop-filter: blur(10px);
+        border-top:1px solid var(--border);
+      }
+      .stickyInner{
+        max-width:1100px; margin:0 auto; padding:12px 18px;
+        display:flex; gap:10px; align-items:center; justify-content:space-between;
+      }
+      .stickyInner .left{display:flex; flex-direction:column}
+      .stickyInner .left b{font-size:14px}
+      .stickyInner .left span{font-size:12px; color:rgba(255,255,255,.6)}
+      .stickyInner .right{display:flex; gap:10px; align-items:center}
+      .stickyInner a{white-space:nowrap}
+
+      @media (max-width: 980px){
+        .hero{grid-template-columns: 1fr}
+        .how{grid-template-columns: 1fr 1fr}
+        .proofGrid{grid-template-columns: 1fr 1fr}
+        .faq{grid-template-columns: 1fr}
+      }
+      @media (max-width: 560px){
+        .how{grid-template-columns: 1fr}
+        .proofGrid{grid-template-columns: 1fr}
+        .proof img{height:200px}
+        .stickyInner{flex-direction:column; align-items:stretch}
+        .stickyInner .right{flex-direction:column}
+        .stickyInner a{width:100%; text-align:center}
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="top">
+        <a class="back" href="/index.html">← Voltar</a>
+        <div class="badge">🏠 Club Imobiliário • R$97/mês</div>
       </div>
 
-      <div class="fine">
-        ✅ Acesso imediato após o pagamento • Entrega automática do link do grupo • Sem promessa de lucro — aqui é método e filtro.
-      </div>
-    </div>
-
-    <div class="side">
-      <div class="stat">
-        <b>Pra quem quer “investimento sério”</b>
-        <span>High ticket, decisão com critério. Menos emoção, mais análise.</span>
-      </div>
-      <div class="stat">
-        <b>Você economiza tempo e reduz risco</b>
-        <span>Curadoria + checklist = menos horas garimpando e menos chance de entrar em cilada.</span>
-      </div>
-      <div class="stat">
-        <b>Suporte e educação prática</b>
-        <span>Você aprende o que olhar para evoluir o nível como investidor.</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="section" id="conteudo">
-    <div class="divider"></div>
-
-    <div class="grid">
-      <div class="card">
-        <h3>✅ O que você recebe no Club</h3>
-        <ul>
-          <li><b>Oportunidades filtradas</b> de imóveis abaixo do mercado</li>
-          <li><b>Resumo de riscos</b> (ocupação, dívidas, entraves e atenção no edital)</li>
-          <li><b>Checklist prático</b> do que validar antes do lance</li>
-          <li><b>Educação prática</b> (para decisões melhores e mais seguras)</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>🧠 O que isso evita</h3>
-        <ul>
-          <li>Comprar “barato” e descobrir que virou <b>dor de cabeça</b></li>
-          <li>Entrar sem entender <b>ocupação</b> e custos reais</li>
-          <li>Ignorar detalhes do edital que viram <b>prejuízo</b></li>
-          <li>Gastar semanas garimpando e mesmo assim errar o básico</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="divider"></div>
-
-    <div class="card">
-      <h3>👤 Para quem é (e para quem NÃO é)</h3>
-      <div class="grid">
-        <div>
-          <ul>
-            <li>✅ Quer comprar imóvel com <b>método</b></li>
-            <li>✅ Busca oportunidades com <b>critério</b></li>
-            <li>✅ Quer aprender a avaliar com <b>visão de investidor</b></li>
+      <div class="hero">
+        <div class="panel">
+          <h1>Curadoria de imóveis abaixo do mercado com <span style="color:var(--gold)">resumo de risco</span></h1>
+          <p class="sub">
+            Imóvel é high ticket. Um detalhe no edital pode virar prejuízo.
+            Aqui você recebe oportunidades filtradas + checklist prático pra decidir melhor.
+          </p>
+          <ul class="points">
+            <li><b>Oportunidades filtradas</b> (abaixo do mercado)</li>
+            <li><b>Resumo dos riscos</b> (ocupação, dívidas, jurídico, etc.)</li>
+            <li><b>Checklist do edital</b> (pra você não entrar “no escuro”)</li>
+            <li><b>Educação prática</b> pra decisões melhores</li>
           </ul>
         </div>
-        <div>
-          <ul>
-            <li>❌ Quer “fórmula mágica” e lucro garantido</li>
-            <li>❌ Não quer ler nada e quer que alguém faça tudo por você</li>
-            <li>❌ Busca “tiro no escuro” só pelo desconto</li>
-          </ul>
+
+        <div class="panel ctaBox">
+          <div>
+            <div style="color:var(--muted); font-weight:700">Acesso mensal</div>
+            <div class="price">R$ 97,00</div>
+            <div class="mini">Pagamento via Kiwify. Cancelamento e regras conforme a plataforma.</div>
+          </div>
+
+          <a class="btn" href="https://pay.kiwify.com.br/p4L7JdR" target="_blank" rel="noreferrer">
+            Entrar agora (Kiwify) →
+          </a>
+
+          <a class="btnGhost" id="btnWhatsapp" href="#" target="_blank" rel="noreferrer">
+            Tirar dúvidas no WhatsApp
+          </a>
+
+          <div class="mini">
+            *Conteúdo educativo. Investimentos envolvem risco. Sempre valide documentos antes do lance.
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Como funciona (em 60 segundos)</h2>
+        <div class="how">
+          <div class="step"><b>1) Você entra</b><p>Assina na Kiwify e recebe acesso.</p></div>
+          <div class="step"><b>2) Recebe curadoria</b><p>Imóveis abaixo do mercado, filtrados.</p></div>
+          <div class="step"><b>3) Lê o resumo de risco</b><p>O que pode dar problema e como agir.</p></div>
+          <div class="step"><b>4) Se quiser, tira dúvida</b><p>WhatsApp com mensagem já identificando a origem.</p></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Provas sociais e exemplos</h2>
+        <p class="mini" style="margin:0">Suba seus prints no repo em <b>/assets</b> e troque os nomes abaixo.</p>
+
+        <div class="proofGrid">
+          <div class="proof">
+            <img src="/assets/prova-imovel-1.png" alt="Prova social imóveis 1" loading="lazy" />
+            <div class="cap">Exemplo de oportunidade com “gap” de preço.</div>
+          </div>
+          <div class="proof">
+            <img src="/assets/prova-imovel-2.png" alt="Prova social imóveis 2" loading="lazy" />
+            <div class="cap">Print/ROI/resultado real (quando aplicável).</div>
+          </div>
+          <div class="proof">
+            <img src="/assets/prova-imovel-3.png" alt="Prova social imóveis 3" loading="lazy" />
+            <div class="cap">Checklist / análise / risco resumido.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Dúvidas frequentes</h2>
+        <div class="faq">
+          <details>
+            <summary>Isso substitui análise jurídica?</summary>
+            <p>Não. A proposta é <b>curadoria + educação prática</b> e um resumo de risco. Em casos específicos, sempre valide com documentos e, se necessário, um especialista.</p>
+          </details>
+          <details>
+            <summary>Serve pra quem nunca comprou em leilão?</summary>
+            <p>Sim. Você entra com checklist e aprende a filtrar o que é cilada vs. oportunidade.</p>
+          </details>
+          <details>
+            <summary>Posso cancelar?</summary>
+            <p>Sim, diretamente pela Kiwify (regras e prazos conforme a plataforma).</p>
+          </details>
+          <details>
+            <summary>Qual o diferencial?</summary>
+            <p><b>Velocidade + clareza</b>: você poupa tempo e toma decisões mais seguras, especialmente em high ticket.</p>
+          </details>
         </div>
       </div>
     </div>
 
-    <div class="divider"></div>
-
-    <div class="card">
-      <h3>📌 Prova social (cole seus prints aqui)</h3>
-      <p class="sub" style="margin-top:0">Troque os blocos abaixo por prints de resultados, mensagens, oportunidades e feedbacks.</p>
-      <div class="proof">
-        <div class="shot">📸 Print #1 (oportunidade / feedback)</div>
-        <div class="shot">📸 Print #2 (resultado / mensagem)</div>
-        <div class="shot">📸 Print #3 (exemplo de curadoria)</div>
-      </div>
-    </div>
-
-    <div class="divider"></div>
-
-    <div class="card pricing">
-      <div class="priceLine">
-        <div>
-          <h3 style="margin:0 0 6px">Entre agora no Club Imobiliário</h3>
-          <div class="pill">Acesso imediato + entrega automática</div>
+    <div class="sticky">
+      <div class="stickyInner">
+        <div class="left">
+          <b>Club Imobiliário • R$97/mês</b>
+          <span>Entre agora ou tire dúvidas no WhatsApp</span>
         </div>
-        <div class="price">R$97</div>
-      </div>
-
-      <div class="ctaRow" style="margin-top:14px">
-        <a class="cta" href="https://pay.kiwify.com.br/p4L7JdR" target="_blank" rel="noopener">Quero entrar agora</a>
-        <a class="ghost" href="#faq">Tirar dúvidas</a>
-      </div>
-
-      <div class="fine">
-        Você recebe o link do grupo automaticamente após o pagamento pela Kiwify.
+        <div class="right">
+          <a class="btn" href="https://pay.kiwify.com.br/p4L7JdR" target="_blank" rel="noreferrer">Entrar (Kiwify) →</a>
+          <a class="btnGhost" id="btnWhatsapp2" href="#" target="_blank" rel="noreferrer">WhatsApp</a>
+        </div>
       </div>
     </div>
 
-    <div class="divider"></div>
-
-    <div class="card faq" id="faq">
-      <h3 style="margin:0 0 8px">❓ Dúvidas comuns</h3>
-
-      <details>
-        <summary>Como recebo o acesso ao grupo?</summary>
-        <p>Após o pagamento, a Kiwify entrega automaticamente o link de acesso (página de obrigado e/ou e-mail).</p>
-      </details>
-
-      <details>
-        <summary>Isso é consultoria 1:1?</summary>
-        <p>Não. É um club com curadoria e educação prática. Se você quiser algo 1:1, você pode solicitar depois.</p>
-      </details>
-
-      <details>
-        <summary>Vocês garantem lucro?</summary>
-        <p>Não. O objetivo é reduzir risco e acelerar seu processo com método e filtro. Resultado depende de execução.</p>
-      </details>
-
-      <details>
-        <summary>Posso cancelar?</summary>
-        <p>As regras de cancelamento seguem o checkout da Kiwify, exibidas no momento do pagamento.</p>
-      </details>
-
-      <div class="ctaRow" style="margin-top:16px">
-        <a class="cta" href="https://pay.kiwify.com.br/p4L7JdR" target="_blank" rel="noopener">Entrar no Club por R$97</a>
-      </div>
-    </div>
-  </div>
-</div>
-</body>
+    <script>
+      (function(){
+        const phone = "5511983411251";
+        const pageName = "Club Imobiliário (R$97)";
+        const msg = `Olá! Vim da página: ${pageName}. Quero tirar uma dúvida antes de entrar.`;
+        const link = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+        const b1 = document.getElementById("btnWhatsapp");
+        const b2 = document.getElementById("btnWhatsapp2");
+        if(b1) b1.href = link;
+        if(b2) b2.href = link;
+      })();
+    </script>
+  </body>
 </html>
