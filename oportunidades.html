@@ -1,96 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '1593790635212430');
+fbq('track', 'PageView');
+</script>
+
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1593790635212430&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Meta Pixel Code -->
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Club Oportunidades</title>
 
 <style>
-
-body{
-margin:0;
-font-family:system-ui;
-background:#000;
-color:#fff;
-}
-
-.container{
-max-width:900px;
-margin:auto;
-padding:28px;
-}
-
-h1{
-font-size:30px;
-text-align:center;
-}
-
-h2{
-margin-top:60px;
-font-size:24px;
-color:#eab308;
-}
-
+body{margin:0;font-family:system-ui;background:#000;color:#fff;}
+.container{max-width:900px;margin:auto;padding:28px;}
+h1{font-size:30px;text-align:center;}
+h2{margin-top:60px;font-size:24px;color:#eab308;}
 p{opacity:.92}
 
 .button{
-display:block;
-width:100%;
-background:#eab308;
-color:#000;
-text-align:center;
-padding:18px;
-margin:28px 0;
-text-decoration:none;
-font-weight:bold;
-border-radius:12px;
-font-size:18px;
+display:block;width:100%;background:#eab308;color:#000;
+text-align:center;padding:18px;margin:28px 0;text-decoration:none;
+font-weight:bold;border-radius:12px;font-size:18px;
 }
 
 .card{
-background:#0a0a0a;
-border:1px solid #222;
-padding:18px;
-border-radius:12px;
-margin-top:16px;
+background:#0a0a0a;border:1px solid #222;
+padding:18px;border-radius:12px;margin-top:16px;
 }
 
-img{
-width:100%;
-border-radius:12px;
-margin-top:12px;
-}
-
-.highlight{
-color:#eab308;
-font-weight:bold;
-}
+img{width:100%;border-radius:12px;margin-top:12px;}
+.highlight{color:#eab308;font-weight:bold;}
 
 .floating{
-position:fixed;
-bottom:0;
-width:100%;
-background:#eab308;
-color:#000;
-text-align:center;
-padding:18px;
-font-weight:bold;
-text-decoration:none;
-font-size:18px;
+position:fixed;bottom:0;width:100%;
+background:#eab308;color:#000;text-align:center;
+padding:18px;font-weight:bold;text-decoration:none;font-size:18px;
 }
 
 .whats{
-position:fixed;
-bottom:90px;
-right:18px;
-background:#25D366;
-padding:16px;
-border-radius:50%;
-text-decoration:none;
-color:white;
-font-size:18px;
+position:fixed;bottom:90px;right:18px;background:#25D366;
+padding:16px;border-radius:50%;text-decoration:none;color:white;font-size:18px;
 }
-
 </style>
 </head>
 
@@ -109,10 +76,11 @@ Sem cair em imóvel problemático.<br>
 Sem correr risco oculto.
 </p>
 
-<a class="button" href="https://pay.kiwify.com.br/BDczlbr">
+<a class="button"
+href="https://pay.kiwify.com.br/BDczlbr"
+onclick="fbq('track','InitiateCheckout');">
 QUERO ENTRAR NO CLUB AGORA
 </a>
-
 
 <h2>📊 Veja o que você vai receber</h2>
 
@@ -131,8 +99,6 @@ Exemplo de oportunidades analisadas:
 <img src="assets/print-imoveis-2.png">
 </div>
 
-
-
 <h2>🏆 Exemplo real de oportunidade</h2>
 
 <div class="card">
@@ -141,8 +107,6 @@ Avaliação: R$ 420.000<br>
 Lance inicial: R$ 228.000<br><br>
 <span class="highlight">Esse tipo de oportunidade aparece dentro do Club.</span>
 </div>
-
-
 
 <h2>🚨 O erro da maioria</h2>
 
@@ -155,18 +119,13 @@ ou compra algo com problema jurídico escondido.
 O Club elimina esse risco e entrega apenas oportunidades que realmente fazem sentido analisar.
 </p>
 
-
-
 <h2>🔒 Não é portal público</h2>
 
 <p>
 Não é lista aberta da internet.<br>
 Não é site genérico.<br><br>
-
 Você recebe uma curadoria privada com análise e contexto.
 </p>
-
-
 
 <h2>💵 Investimento</h2>
 
@@ -175,11 +134,11 @@ Por apenas <span class="highlight">R$29,90/mês</span><br>
 Menos que um almoço.
 </p>
 
-<a class="button" href="https://pay.kiwify.com.br/BDczlbr">
+<a class="button"
+href="https://pay.kiwify.com.br/BDczlbr"
+onclick="fbq('track','InitiateCheckout');">
 ENTRAR NO CLUB POR R$29,90
 </a>
-
-
 
 <h2>❓ Perguntas rápidas</h2>
 
@@ -189,13 +148,14 @@ ENTRAR NO CLUB POR R$29,90
 
 </div>
 
-
-
-<a class="floating" href="https://pay.kiwify.com.br/BDczlbr">
+<a class="floating"
+href="https://pay.kiwify.com.br/BDczlbr"
+onclick="fbq('track','InitiateCheckout');">
 ENTRAR AGORA
 </a>
 
-<a class="whats" href="https://wa.me/5511983411251?text=Vim%20da%20pagina%20de%20Oportunidades%20do%20Club">
+<a class="whats"
+href="https://wa.me/5511983411251?text=Vim%20da%20pagina%20de%20Oportunidades%20do%20Club">
 💬
 </a>
 
