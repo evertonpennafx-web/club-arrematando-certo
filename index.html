@@ -1,216 +1,141 @@
-<!doctype html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Club Arrematando Certo</title>
-    <meta name="description" content="Acesso ao Club Arrematando Certo: oportunidades (ouro, veículos, itens) e investimento imobiliário (curadoria de imóveis)." />
-    <style>
-      :root{
-        --bg:#0b0b0c;
-        --card:#151517;
-        --card2:#101012;
-        --text:#f1f1f1;
-        --muted:#b8b8b8;
-        --gold:#d4af37;
-        --gold2:#b8921f;
-        --border:rgba(255,255,255,.08);
-        --shadow: 0 18px 50px rgba(0,0,0,.55);
-      }
-      *{box-sizing:border-box}
-      body{
-        margin:0;
-        font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Arial;
-        background: radial-gradient(1200px 800px at 50% -10%, rgba(212,175,55,.18), transparent 60%),
-                    radial-gradient(900px 700px at 20% 0%, rgba(212,175,55,.10), transparent 55%),
-                    var(--bg);
-        color:var(--text);
-      }
-      a{color:inherit; text-decoration:none}
-      .container{
-        width:100%;
-        max-width:1100px;
-        margin:0 auto;
-        padding:28px 18px 64px;
-      }
-      .top{
-        display:flex; align-items:center; justify-content:space-between;
-        gap:12px; padding:8px 0 18px;
-      }
-      .brand{
-        display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px;
-      }
-      .dot{
-        width:10px; height:10px; border-radius:999px; background:var(--gold);
-        box-shadow: 0 0 0 6px rgba(212,175,55,.12);
-      }
-      .pill{
-        border:1px solid var(--border);
-        padding:10px 12px; border-radius:999px;
-        background: rgba(255,255,255,.03);
-        color:var(--muted); font-size:13px;
-      }
-      .hero{
-        text-align:center;
-        padding:36px 0 20px;
-      }
-      .hero h1{
-        margin:0;
-        font-size: clamp(28px, 4vw, 46px);
-        line-height:1.1;
-      }
-      .hero p{
-        margin:14px auto 0;
-        max-width:760px;
-        color:var(--muted);
-        font-size: clamp(14px, 1.8vw, 17px);
-        line-height:1.55;
-      }
-      .grid{
-        display:grid;
-        grid-template-columns: 1fr 1fr;
-        gap:18px;
-        margin-top:22px;
-      }
-      .card{
-        background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-        border:1px solid var(--border);
-        border-radius:18px;
-        box-shadow: var(--shadow);
-        overflow:hidden;
-      }
-      .cardInner{padding:22px}
-      .tag{
-        display:inline-flex; align-items:center; gap:8px;
-        font-size:12px; color:var(--muted);
-        border:1px solid var(--border);
-        padding:7px 10px; border-radius:999px;
-        background: rgba(0,0,0,.25);
-      }
-      .card h2{
-        margin:12px 0 8px;
-        font-size:22px;
-      }
-      .card p{margin:0; color:var(--muted); line-height:1.55}
-      .btnRow{
-        display:flex; gap:10px; align-items:center; margin-top:16px;
-        flex-wrap:wrap;
-      }
-      .btn{
-        appearance:none; border:0;
-        background: linear-gradient(180deg, var(--gold), var(--gold2));
-        color:#121212;
-        padding:12px 16px;
-        border-radius:12px;
-        font-weight:800;
-        cursor:pointer;
-        display:inline-flex; gap:10px; align-items:center; justify-content:center;
-        box-shadow: 0 12px 30px rgba(212,175,55,.18);
-      }
-      .btn:hover{filter:brightness(1.03)}
-      .btnGhost{
-        border:1px solid var(--border);
-        background: rgba(255,255,255,.03);
-        color:var(--text);
-        padding:12px 16px;
-        border-radius:12px;
-        font-weight:700;
-      }
-      .mini{
-        margin-top:10px;
-        font-size:12.5px;
-        color:rgba(255,255,255,.55);
-      }
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
 
-      .section{
-        margin-top:34px;
-        background: rgba(255,255,255,.02);
-        border:1px solid var(--border);
-        border-radius:18px;
-        padding:22px;
-      }
-      .section h3{margin:0 0 10px; font-size:18px}
-      .list{
-        margin:0; padding:0 0 0 18px;
-        color:var(--muted);
-        line-height:1.7;
-      }
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
 
-      .footer{
-        margin-top:26px;
-        text-align:center;
-        color:rgba(255,255,255,.45);
-        font-size:12px;
-      }
+fbq('init', '1593790635212430');
+fbq('track', 'PageView');
+</script>
 
-      @media (max-width: 860px){
-        .grid{grid-template-columns: 1fr;}
-        .btn, .btnGhost{width:100%}
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="top">
-        <div class="brand"><span class="dot"></span> Club Arrematando Certo</div>
-        <div class="pill">Acesso mensal • Cancelamento pela Kiwify</div>
-      </div>
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1593790635212430&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Meta Pixel Code -->
 
-      <div class="hero">
-        <h1>Oportunidades reais, com filtro e visão de investidor.</h1>
-        <p>
-          Dois caminhos: <b>volume e lucro rápido</b> (ouro, veículos, itens) ou <b>investimento sério</b>
-          (curadoria de imóveis). Você entra, recebe as oportunidades filtradas e decide com mais segurança.
-        </p>
-      </div>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Club Arrematando Certo</title>
 
-      <div class="grid">
-        <a class="card" href="/oportunidades.html">
-          <div class="cardInner">
-            <span class="tag">💰 Oportunidades • Ouro, veículos, itens</span>
-            <h2>Club Oportunidades</h2>
-            <p>
-              Para quem quer começar, fazer renda extra e aproveitar leilões “de volume”.
-              Curadoria + alertas + educação prática pra não cair em cilada.
-            </p>
-            <div class="btnRow">
-              <span class="btn">Entrar por R$29,90 →</span>
-              <span class="btnGhost">Ver detalhes</span>
-            </div>
-            <div class="mini">Indicado pra iniciante e quem quer operar com recorrência.</div>
-          </div>
-        </a>
+<style>
+body{margin:0;font-family:system-ui;background:#000;color:#fff;}
+.container{max-width:1100px;margin:auto;padding:40px 24px;}
+h1{font-size:38px;text-align:center;}
+.sub{opacity:.85;text-align:center;margin-top:10px;}
 
-        <a class="card" href="/imoveis.html">
-          <div class="cardInner">
-            <span class="tag">🏠 Imóveis • High ticket + risco</span>
-            <h2>Club Imobiliário</h2>
-            <p>
-              Para quem quer investir sério. Oportunidades abaixo do mercado,
-              com resumo de risco e checklist do edital.
-            </p>
-            <div class="btnRow">
-              <span class="btn">Entrar por R$97 →</span>
-              <span class="btnGhost">Ver detalhes</span>
-            </div>
-            <div class="mini">Ideal pra quem busca patrimônio e decisões mais seguras.</div>
-          </div>
-        </a>
-      </div>
+.grid{
+display:grid;
+grid-template-columns:1fr;
+gap:30px;
+margin-top:50px;
+}
 
-      <div class="section">
-        <h3>O que você recebe (nos 2 clubes)</h3>
-        <ul class="list">
-          <li><b>Curadoria:</b> você não perde tempo caçando oportunidade ruim.</li>
-          <li><b>Resumo rápido:</b> por que é oportunidade e quais os riscos.</li>
-          <li><b>Educação prática:</b> checklist e alertas do que quase ninguém vê.</li>
-          <li><b>Suporte por WhatsApp</b> pra tirar dúvidas (com identificação da origem).</li>
-        </ul>
-      </div>
+@media(min-width:768px){
+.grid{grid-template-columns:1fr 1fr;}
+}
 
-      <div class="footer">
-        © Club Arrematando Certo • Conteúdo educativo. Resultados variam de acordo com capital, estratégia e execução.
-      </div>
-    </div>
-  </body>
+.card{
+background:#0a0a0a;
+border:1px solid #222;
+padding:30px;
+border-radius:16px;
+}
+
+.badge{
+color:#eab308;
+font-size:14px;
+margin-bottom:10px;
+}
+
+h2{margin-top:0;font-size:24px;}
+
+.button{
+display:inline-block;
+background:#eab308;
+color:#000;
+padding:14px 22px;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
+margin-top:15px;
+}
+
+.secondary{
+border:1px solid #444;
+padding:14px 22px;
+border-radius:10px;
+text-decoration:none;
+color:#fff;
+margin-left:10px;
+}
+
+.footer{
+margin-top:60px;
+opacity:.6;
+font-size:14px;
+text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Oportunidades reais, com filtro e visão de investidor.</h1>
+
+<p class="sub">
+Dois caminhos: <b>volume e lucro rápido</b> ou <b>investimento sério</b>.
+Você escolhe o nível.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<div class="badge">Ouro • Veículos • Itens</div>
+<h2>Club Oportunidades</h2>
+<p>Para quem quer começar, gerar renda extra e operar com recorrência.</p>
+
+<a class="button"
+href="https://pay.kiwify.com.br/BDczlbr"
+onclick="fbq('track','InitiateCheckout');">
+Entrar por R$29,90 →
+</a>
+
+<a class="secondary" href="/oportunidades.html">Ver detalhes</a>
+</div>
+
+<div class="card">
+<div class="badge">Imóveis • High ticket</div>
+<h2>Club Imobiliário</h2>
+<p>Para quem quer investir sério e buscar imóveis abaixo do mercado.</p>
+
+<a class="button"
+href="https://pay.kiwify.com.br/p4L7JdR"
+onclick="fbq('track','InitiateCheckout');">
+Entrar por R$97 →
+</a>
+
+<a class="secondary" href="/imoveis.html">Ver detalhes</a>
+</div>
+
+</div>
+
+<div class="footer">
+© Club Arrematando Certo • Conteúdo educativo.
+</div>
+
+</div>
+
+</body>
 </html>
