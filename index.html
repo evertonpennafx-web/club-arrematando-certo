@@ -1,51 +1,319 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-  <title>Club Arrematando Certo</title>
-  <meta charset="UTF-8" />
-  <style>
-    body{
-      font-family:Arial;
-      background:#0b0b0b;
-      color:white;
-      text-align:center;
-      padding:60px;
-    }
-    .card{
-      background:#1b1b1b;
-      padding:30px;
-      margin:20px auto;
-      max-width:400px;
-      border-radius:12px;
-    }
-    a{
-      display:inline-block;
-      margin-top:15px;
-      padding:12px 20px;
-      background:#d4af37;
-      color:black;
-      text-decoration:none;
-      border-radius:8px;
-      font-weight:bold;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Club Arrematando Certo</title>
+<meta name="description" content="Clubs exclusivos com curadoria de oportunidades e educação prática para comprar com mais critério e menos risco." />
+<style>
+  :root{
+    --bg:#0b0b0b;
+    --card:#151515;
+    --text:#ffffff;
+    --muted:rgba(255,255,255,.78);
+    --gold:#d4af37;
+    --line:rgba(255,255,255,.10);
+    --shadow:0 24px 70px rgba(0,0,0,.60);
+    --radius:20px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+    color:var(--text);
+    background:
+      radial-gradient(1200px 700px at 50% -10%, rgba(212,175,55,.16), transparent 60%),
+      radial-gradient(900px 600px at 10% 30%, rgba(255,255,255,.06), transparent 55%),
+      var(--bg);
+  }
+  a{color:inherit}
+  .wrap{max-width:1060px;margin:0 auto;padding:34px 18px 90px}
+  .top{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    padding:10px 0 22px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.2px}
+  .logo{
+    width:40px;height:40px;border-radius:14px;
+    background:rgba(212,175,55,.16);
+    border:1px solid rgba(212,175,55,.28);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 10px 30px rgba(212,175,55,.10);
+  }
+  .badge{
+    font-size:12px;padding:6px 10px;border:1px solid var(--line);
+    border-radius:999px;background:rgba(255,255,255,.04);color:var(--muted);
+    font-weight:700;
+  }
+  .nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+  .nav a{
+    text-decoration:none;font-weight:800;font-size:13px;
+    padding:10px 12px;border-radius:999px;
+    border:1px solid var(--line);background:rgba(255,255,255,.03);
+  }
+  .nav a:hover{border-color:rgba(212,175,55,.35)}
+  .hero{
+    display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:stretch;
+    margin-top:8px;
+  }
+  .panel{
+    background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:26px;
+  }
+  h1{
+    margin:0 0 12px;
+    font-size:46px;line-height:1.04;letter-spacing:-.5px;
+  }
+  .hl{color:var(--gold);font-weight:950}
+  .sub{
+    margin:0 0 18px;
+    color:var(--muted);
+    font-size:16px;line-height:1.65;
+  }
+  .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+  .cta{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    padding:14px 18px;border-radius:14px;text-decoration:none;font-weight:950;
+    background:var(--gold);color:#111;border:0;
+  }
+  .ghost{
+    display:inline-flex;align-items:center;justify-content:center;
+    padding:14px 18px;border-radius:14px;text-decoration:none;font-weight:900;
+    background:transparent;border:1px solid var(--line);color:var(--text);
+  }
+  .fine{margin-top:10px;color:rgba(255,255,255,.64);font-size:13px;line-height:1.5}
+  .side{
+    display:flex;flex-direction:column;gap:12px;
+  }
+  .stat{
+    background:rgba(0,0,0,.25);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:16px;
+  }
+  .stat b{display:block;font-size:15px;margin-bottom:6px}
+  .stat span{color:var(--muted);font-size:13px;line-height:1.45}
+  .divider{height:1px;background:var(--line);margin:24px 0}
+  .sectionTitle{font-size:18px;margin:0 0 12px}
+  .grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:14px;
+  }
+  .card{
+    background:rgba(255,255,255,.04);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:18px;
+  }
+  .card h3{margin:0 0 10px;font-size:18px}
+  .card p{margin:0;color:var(--muted);line-height:1.6}
+  .pill{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:12px;padding:7px 10px;border-radius:999px;
+    background:rgba(212,175,55,.14);
+    border:1px solid rgba(212,175,55,.26);
+    color:rgba(255,255,255,.92);
+    font-weight:900;
+    margin-top:10px;
+  }
+  ul{margin:10px 0 0 18px;padding:0}
+  li{margin:9px 0;color:var(--muted);line-height:1.55}
+  .offer{
+    display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;
+    margin-top:14px;padding-top:14px;border-top:1px solid var(--line);
+  }
+  .price{
+    font-size:34px;font-weight:950;color:var(--gold);letter-spacing:-.5px;
+  }
+  .mini{font-size:12px;color:rgba(255,255,255,.62)}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    padding:12px 16px;border-radius:14px;text-decoration:none;font-weight:950;
+    background:var(--gold);color:#111;
+  }
+  .proof{
+    display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;
+  }
+  .shot{
+    border-radius:16px;border:1px dashed rgba(255,255,255,.18);
+    background:rgba(255,255,255,.02);
+    padding:14px;min-height:110px;
+    color:rgba(255,255,255,.68);font-size:13px;
+    display:flex;align-items:center;justify-content:center;text-align:center;
+  }
+  .faq details{
+    background:rgba(255,255,255,.03);
+    border:1px solid var(--line);
+    border-radius:14px;padding:14px;margin-top:10px;
+  }
+  .faq summary{cursor:pointer;font-weight:950}
+  .faq p{margin:10px 0 0;color:var(--muted);line-height:1.6}
+  .footer{
+    margin-top:26px;color:rgba(255,255,255,.55);font-size:12px;line-height:1.6;
+    text-align:center;
+  }
+  @media (max-width:980px){
+    .hero{grid-template-columns:1fr}
+    h1{font-size:38px}
+    .grid{grid-template-columns:1fr}
+    .proof{grid-template-columns:1fr}
+    .nav{justify-content:flex-start}
+  }
+</style>
 </head>
-
 <body>
+<div class="wrap">
+  <div class="top">
+    <div class="brand">
+      <div class="logo">📌</div>
+      <div>
+        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+          <span>Club Arrematando Certo</span>
+          <span class="badge">curadoria + educação prática</span>
+        </div>
+        <div style="font-size:12px;color:rgba(255,255,255,.65);margin-top:3px">
+          Entre no club certo para seu perfil e comece com mais critério e menos risco.
+        </div>
+      </div>
+    </div>
 
-<h1>Club Arrematando Certo</h1>
+    <div class="nav">
+      <a href="#clubs">Ver clubs</a>
+      <a href="#provas">Provas</a>
+      <a href="#duvidas">Dúvidas</a>
+    </div>
+  </div>
 
-<div class="card">
-<h2>💰 Oportunidades</h2>
-<p>ouro, veículos, itens</p>
-<a href="/oportunidades.html">Entrar</a>
+  <div class="hero">
+    <div class="panel">
+      <h1>Oportunidades de leilão com <span class="hl">filtro</span>, <span class="hl">método</span> e decisão mais segura.</h1>
+      <p class="sub">
+        Aqui você não entra no “desconto pelo desconto”. Você entra com um sistema:
+        curadoria, checklist e orientação prática para evitar ciladas e acelerar suas decisões.
+      </p>
+
+      <div class="ctaRow">
+        <a class="cta" href="#clubs">Escolher meu club agora</a>
+        <a class="ghost" href="#duvidas">Como funciona?</a>
+      </div>
+
+      <div class="fine">
+        ✅ Acesso imediato após pagamento • Link do grupo entregue automaticamente pela Kiwify • Sem promessas irreais
+      </div>
+    </div>
+
+    <div class="side">
+      <div class="stat">
+        <b>Menos tempo garimpando</b>
+        <span>Você recebe oportunidades filtradas e aprende o que checar antes de comprar.</span>
+      </div>
+      <div class="stat">
+        <b>Mais critério, menos emoção</b>
+        <span>Checklist e pontos de atenção pra evitar prejuízo por “detalhe bobo”.</span>
+      </div>
+      <div class="stat">
+        <b>Educação prática no dia a dia</b>
+        <span>Conteúdo simples, direto e aplicável (o que realmente importa).</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h2 class="sectionTitle" id="clubs">Escolha seu club</h2>
+  <div class="grid">
+    <!-- OPORTUNIDADES -->
+    <div class="card">
+      <h3>💰 Club Oportunidades</h3>
+      <p>Para quem quer começar mais leve: <b>ouro, veículos e itens</b> com potencial de margem e checklist anti-cilada.</p>
+
+      <div class="pill">Ideal para: giro / renda extra / iniciantes</div>
+
+      <ul>
+        <li>Oportunidades filtradas (ouro, veículos, itens)</li>
+        <li>Pontos de atenção + checklist antes de comprar</li>
+        <li>Educação prática e direta no grupo</li>
+      </ul>
+
+      <div class="offer">
+        <div>
+          <div class="price">R$29,90</div>
+          <div class="mini">mensal • acesso imediato</div>
+        </div>
+        <a class="btn" href="/oportunidades.html">Ver detalhes e entrar →</a>
+      </div>
+    </div>
+
+    <!-- IMÓVEIS -->
+    <div class="card">
+      <h3>🏠 Club Imobiliário</h3>
+      <p>Para quem quer <b>investimento sério</b>: oportunidades abaixo do mercado com visão de investidor e análise prática de risco.</p>
+
+      <div class="pill">Ideal para: high ticket / compra com critério</div>
+
+      <ul>
+        <li>Curadoria de imóveis com foco em oportunidade real</li>
+        <li>Resumo de riscos (ocupação, dívidas, edital)</li>
+        <li>Checklist prático + educação para decisões melhores</li>
+      </ul>
+
+      <div class="offer">
+        <div>
+          <div class="price">R$97</div>
+          <div class="mini">mensal • acesso imediato</div>
+        </div>
+        <a class="btn" href="/imoveis.html">Ver detalhes e entrar →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h2 class="sectionTitle" id="provas">Provas / prints (cole aqui)</h2>
+  <div class="card">
+    <p style="margin:0;color:var(--muted)">
+      Substitua os blocos por prints reais: oportunidades, feedbacks, resultados e conversas.
+      Isso dobra sua conversão.
+    </p>
+    <div class="proof" style="margin-top:12px">
+      <div class="shot">📸 Print #1 (oportunidade / antes-depois)</div>
+      <div class="shot">📸 Print #2 (feedback / mensagem)</div>
+      <div class="shot">📸 Print #3 (curadoria / checklist aplicado)</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h2 class="sectionTitle" id="duvidas">Dúvidas rápidas</h2>
+  <div class="card faq">
+    <details>
+      <summary>Como recebo o acesso ao grupo?</summary>
+      <p>Após o pagamento, a Kiwify entrega automaticamente o link de acesso (página de obrigado e/ou e-mail).</p>
+    </details>
+    <details>
+      <summary>Isso é consultoria 1:1?</summary>
+      <p>Não. É um club com curadoria + educação prática. Se você quiser 1:1, você pode solicitar depois.</p>
+    </details>
+    <details>
+      <summary>Vocês garantem lucro?</summary>
+      <p>Não. O objetivo é reduzir risco e acelerar seu processo com método e filtro. Resultado depende da execução.</p>
+    </details>
+    <details>
+      <summary>Posso cancelar?</summary>
+      <p>As regras de cancelamento seguem o checkout da Kiwify, exibidas no momento do pagamento.</p>
+    </details>
+
+    <div class="ctaRow" style="margin-top:14px">
+      <a class="cta" href="#clubs">Escolher meu club agora</a>
+      <a class="ghost" href="/oportunidades.html">Ver Oportunidades</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    © Club Arrematando Certo • Conteúdo educacional e curadoria. Não é recomendação de investimento.
+  </div>
 </div>
-
-<div class="card">
-<h2>🏠 Investimento Imobiliário</h2>
-<p>curadoria de imóveis</p>
-<a href="/imoveis.html">Entrar</a>
-</div>
-
 </body>
 </html>
